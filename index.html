@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic Chart Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Dynamic Chart Generator</h1>
+		<div class="form-container">
+			<form id="chartForm">
+				<label for="fileInput">Upload CSV File:</label> <input type="file"
+					id="fileInput" accept=".csv" required> <label for="xAxis">Select
+					X-Axis:</label> <select id="xAxis" required></select> <label for="yAxis">Select
+					Y-Axis:</label> <select id="yAxis" required></select> <label
+					for="chartTitle">Chart Title:</label> <input type="text"
+					id="chartTitle" placeholder="Enter chart title"> <label
+					for="chartStyle">Select Chart Style:</label> <select
+					id="chartStyle" required>
+					<option value="bar">Bar Chart</option>
+					<option value="line">Line Chart</option>
+				</select> <label for="chartColor">Select Chart Color:</label> <input
+					type="color" id="chartColor" value="#4CAF50" required>
+
+				<button type="button" id="generateChartBtn">Generate Chart</button>
+			</form>
+		</div>
+
+		<div class="chart-container">
+			<canvas id="myChart"></canvas>
+		</div>
+
+		<div class="instructions">
+			<h2>Instructions:</h2>
+			<p>1. Upload a CSV file containing your data.</p>
+			<p>2. Select the X and Y axes from the dropdowns.</p>
+			<p>3. Enter a title for your chart (optional).</p>
+			<p>4. Click "Generate Chart" to create the dynamic chart.</p>
+			<p>Example CSV Format:</p>
+			<pre>
+                X, Y
+                1, 30
+                2, 29
+                3, 31
+                4, 16
+                5, 24
+                ...
+            </pre>
+		</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>
